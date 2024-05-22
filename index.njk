@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>slashpages</title>
+
+    <meta property='og:title' content='slashpages' />
+    <meta name='description' content='slashpages' />
+    <meta property='og:description' content='slashpages' />
+    <meta property='og:type' content='article' />
+    <meta property='og:url' content='https://albums.rknight.me' />
+    <meta property='og:url' content='https://albums.rknight.me' />
+    <meta property="og:image" content="https://albums.rknight.me/icons/preview.jpg">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#cd064d">
+    <meta name="theme-color" content="#cd064d">
+
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i|bungee:400" rel="stylesheet" />
+
+    <!-- <script src="https://cdn.usefathom.com/script.js" data-site="RKKOTKSC" defer></script> -->
+
+    <style>
+
+        :root {
+            --primary: #cd064d;
+            --text: #333;
+            --subtle: rgba(205, 6, 77, 0.3);
+            --grey: #ccc;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Atkinson Hyperlegible', sans-serif;
+            font-size: 1.2em;
+            background-color: #fafafa;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bungee', display;
+            letter-spacing: 3px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        h1 {
+            /* text-decoration: underline;  */
+            /* text-underline-offset: 0.2em; */
+            font-size: 7vw;
+            margin-bottom: 0.5em;
+        }
+
+        @media screen and (min-width: 1000px) {
+            h1 {
+                font-size: 3em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 1em;
+            }
+        }
+
+        h2::first-letter {
+            color: var(--grey);
+        }
+
+        h2 span {
+            display: none;
+        }
+
+        h2:nth-of-type(4n+1) {
+            color: #008080;
+        }
+        h2:nth-of-type(4n+2) {
+            color: #3498db;
+        }
+        h2:nth-of-type(4n+3) {
+            color: #9b59b6;
+        }
+        h2:nth-of-type(4n+4) {
+            color: #e67e22;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration-line: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: var(--primary);
+            text-underline-offset: 0.2em;
+        }
+
+        a:hover {
+            color: var(--text);
+            text-decoration-color: var(--text);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--grey);
+            margin: 0 0 15px;
+            padding: 0 0 0 20px;
+            font-style: italic;
+        }
+
+        section {
+            border-bottom: 2px solid var(--subtle);
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        main {
+            border: 2px solid var(--subtle);
+            padding: 0 10px;
+            color: black;
+        }
+
+        main h1 {
+            font-size: 1em;
+            text-decoration: none;
+            margin-bottom: -10px;
+        }
+
+        footer {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        hr {
+            border-color: var(--grey);
+            margin-top: 30px;
+            width: 90%;
+        }
+
+    </style>
+
+    </head>
+    <body>
+        
+        <header>
+            <h1>slash pages</h1>
+        </header>
+
+        <main>
+            <p>Slash pages are common pages you can add to your website, usually with a standard, root-level slug like <code>/now</code>, <code>/about</code>, or <code>/uses</code>. They tend to describe the individual behind the site and are distinguishing characteristics of the IndieWeb.</p>
+            <p>The name was <a href="https://shellsharks.social/@shellsharks/112416323777089561">coined</a> by <a href="https://shellsharks.com">Shellsharks</a> and this page was made by <a href="https://rknight.me">Robb Knight</a>.</p>
+        </main>
+
+        {%- for slash in collections.slashpages %}
+            <h2>/<span></span>{{ slash.data.title }}</h2>
+
+            <blockquote>
+                <p>{{ slash.data.description }}</p>
+            </blockquote>
+
+            <ul>
+                {% if slash.data.indieweb %}<li><a href="{{ slash.data.indieweb }}">/{{ slash.data.title }} on IndieWeb</a></li>{% endif %}
+                {% if slash.data.creator_link and slash.data.creator_name %}<li>Creator: <a href="{{ slash.data.creator_link }}">{{ slash.data.creator_name }}</a></li>{% endif %}
+                {% if slash.data.directories %}
+                    {% if slash.data.directories | length > 1 %}
+                        <li>Directories:
+                            <ul>
+                                {%- for dir in slash.data.directories %}
+                                    <li><a href="{{ dir }}">{{ dir | domainOnly }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li>
+                            Directory: {%- for dir in slash.data.directories %}
+                                <a href="{{ dir }}">{{ dir | domainOnly }}</a>
+                            {% endfor %}</li>
+                    {% endif %}
+                    
+                {% endif %}
+            </ul>
+
+            <hr>
+        {% endfor %}
+
+        <footer>
+            <p>slashpages.net was made by <a href="https://rknight.me">Robb Knight</a> with <a href="https://11ty.dev">11ty</a></p>
+        </footer>
+
+    </body>
+</html>
