@@ -76,12 +76,8 @@
             }
         }
 
-        h2::first-letter {
-            color: var(--grey);
-        }
-
         h2 span {
-            display: none;
+            color: var(--grey);
         }
 
         h2:nth-of-type(4n+1) {
@@ -174,7 +170,7 @@
         </main>
 
         {%- for slash in collections.slashpages %}
-            <h2>/<span></span>{{ slash.data.title }}</h2>
+            <h2><span>/</span>{{ slash.data.title }}</div> {% if slash.data.aka %} or <span>/</span>{{ slash.data.aka }}{% endif %}</h2>
 
             <blockquote>
                 <p>{{ slash.data.description }}</p>
