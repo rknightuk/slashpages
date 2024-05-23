@@ -6,3 +6,5 @@ directories:
     - https://alastairjohnston.com/introducing-hello-pages/
 description: a single page listing the ways that you prefer to keep in touch
 ---
+
+Similar to [/contact](#contact)
