@@ -154,6 +154,10 @@
             width: 90%;
         }
 
+        .or {
+            color: var(--grey);
+        }
+
     </style>
 
     </head>
@@ -170,7 +174,13 @@
         </main>
 
         {%- for slash in collections.slashpages %}
-            <h2><span>/</span>{{ slash.data.title }}</div> {% if slash.data.aka %} or <span>/</span>{{ slash.data.aka }}{% endif %}</h2>
+            <h2><span>/</span>{{ slash.data.title }}
+                {% if slash.data.aka %}
+                    {%- for aka in slash.data.aka %}
+                        <span class="or">or</span> <span>/</span>{{ aka }}
+                    {% endfor %}
+                {% endif %}
+            </h2>
 
             <blockquote>
                 <p>{{ slash.data.description }}</p>
