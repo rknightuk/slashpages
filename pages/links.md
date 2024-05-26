@@ -3,6 +3,8 @@ title: links
 aka:
   - bookmarks
 description: a list of links to sites you want link to, share, or bookmark for future reference
+directories:
+  - https://bukmark.club/directory/
 ---
 
 Should be marked up with the [`u-bookmark-of`](https://indieweb.org/bookmark#How) property if you're implementing microformats.
