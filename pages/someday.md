@@ -6,3 +6,5 @@ creator_name: Alexander Sandberg
 ---
 
 [Example /someday page](https://alexandersandberg.com/someday/)
+
+Similar to [/next](#next)
