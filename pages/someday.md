@@ -1,6 +1,6 @@
 ---
 title: someday
-description: a place to let others know about your current location
+description: things you someday would like to achieve, accomplish, explore, experience, create, learn, understand
 creator_link: https://someday.page
 creator_name: Alexander Sandberg
 ---
