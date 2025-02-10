@@ -1,5 +1,8 @@
 ---
 title: junk
+aka:
+    - sale
+    - buy
 description: "host an indie-web yardsale"
 creator_name: Taylor
 creator_link: https://taylor.town/junk-guide
