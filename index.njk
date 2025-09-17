@@ -176,7 +176,7 @@
         </main>
 
         {%- for slash in collections.slashpages %}
-            <h2 id="{{ slash.data.title }}"><span>/</span>{{ slash.data.title }}
+            <h2 id="{{ slash.data.title }}"><a href="#{{ slash.data.title }}">#</a> <span>/</span>{{ slash.data.title }}
                 {% if slash.data.aka %}
                     {%- for aka in slash.data.aka %}
                         <span class="or">or</span> <span>/</span>{{ aka }}
