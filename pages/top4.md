@@ -1,5 +1,7 @@
 ---
 title: top4
+creator_name: Peter's Path
+creator_link: https://peterspath.net
 directories: 
   - https://topfour.net
 indieweb: https://indieweb.org/top4
