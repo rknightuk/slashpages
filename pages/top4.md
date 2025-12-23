@@ -1,5 +1,7 @@
 ---
 title: top4
+aka:
+  - topfour
 creator_name: Peter's Path
 creator_link: https://peterspath.net
 directories: 
