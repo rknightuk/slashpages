@@ -1,6 +1,7 @@
 ---
 title: style
 description: a personal style guide - editorial standards, rules for titles, and so forth. Could also be for a design style guide
+indieweb: https://indieweb.org/style-guide
 ---
 
 - [Ruben Schade's style guide](https://rubenerd.com/the-rubenerd-style-guide/)
