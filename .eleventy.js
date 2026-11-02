@@ -1,5 +1,6 @@
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('icons')
+    eleventyConfig.ignores.add('readme.md')
 
     eleventyConfig.addCollection('slashpages', function(collection) {
         return collection.getFilteredByGlob('pages/**/*.md')
